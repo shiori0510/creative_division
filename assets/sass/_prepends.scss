@@ -1,0 +1,69 @@
+$black: #2B2B2B;
+$pink:#FCC5E7;
+$white:#FFFFFF;
+$light-gray:#A3A3A3;
+$gray:#4A4949;
+$green: #009C78;
+$dark-green: #08624D;
+$pink:#DD9AE0;
+$light-green:#7CE290;
+$blue :#7AA1EB;
+$orange: #E6C381;
+
+
+$default: 'noto-sans-cjk-jp', sans-serif,
+
+
+apple-system, blinkMacSystemFont, /* Macの欧文はSan Francisco (OS X 10.11以降) */
+'Helvetica Neue', /* Macの欧文 (OS X 10.10以前) */
+'Segoe UI',       /* Windowsの欧文 */
+YuGothicM,        /* Windows8.1以上は游ゴシック */
+YuGothic,         /* Macの游ゴシック */
+Meiryo,           /* 游ゴシックが入っていないWindows */
+'din-2014', sans-serif,
+'neue-kabel', sans-serif;
+
+
+
+@mixin mediaL($width-media: 1366px) {
+  @media screen and (max-width: $width-media) {
+    @content;
+  }
+}
+
+@mixin mediaM2($width-media: 1070px) {
+  @media screen and (max-width: $width-media) {
+    @content;
+  }
+}
+
+@mixin mediaM($width-media: 992px) {
+  @media screen and (max-width: $width-media) {
+    @content;
+  }
+}
+
+  @mixin mediaA($width-media: 941px) {
+    @media screen and (max-width: $width-media) {
+      @content;
+    }
+}
+
+@mixin mediaS($width-media: 768px) {
+  @media screen and (max-width: $width-media) {
+    @content;
+  }
+}
+@mixin mediaXS($width-media: 576px) {
+  @media screen and (max-width: $width-media) {
+    @content;
+  }
+}
+@mixin mediaPHONE($width-media: 480px) {
+  @media screen and (max-width: $width-media) {
+    @content;
+  }
+}
+
+
+

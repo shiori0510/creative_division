@@ -1,0 +1,356 @@
+
+/*共通部分*/
+html {
+  font-size: 100%;
+  letter-spacing: 0.22em;
+  visibility: hidden;
+  opacity: 0;
+}
+
+// Webフォントの読み込みを終えたら表示
+html.wf-active{
+  visibility: visible;
+  opacity: 1;
+}
+body {
+  overflow-x: hidden;
+  font-family: $default;
+  line-height: 1.5;
+  color: $white;
+  background-color: $black;
+  font-weight: 400;
+  letter-spacing: 1.3px;
+  @include mediaS{
+    font-size: 0.875rem;
+  }
+  @include mediaXS{
+    font-size: 0.75rem;
+  }
+}
+body.fixed{
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+}
+
+.max-extend {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+.max-extend-inner {
+  max-width: 1366px;
+  margin: 0 auto 0;
+}
+.content-extend{
+  max-width: 1266px;
+  width: 92.6%;
+  margin: 0 auto;
+}
+
+//コンテンツに余白をつける。
+.wrapper {
+  padding: 0 3.66%;
+}
+
+.left-wrapper{
+  width: 78.6%;
+  margin-left: 0;
+  margin-right: auto;
+}
+.left-padding-wrapper{
+  padding-left: 4.65%;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.right-wrapper{
+  width: 21.4%;
+ 
+  height: 100vh;
+}
+
+.black{
+  color: $black;
+}
+
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+  @include mediaM2{
+    font-size: 1.375rem;
+  }
+  @include mediaM{
+    font-size:  1.375rem;
+  }
+  @include mediaXS {
+    font-size:  1.375rem;
+  }
+}
+h2{
+  font-size: 4.25rem;
+  line-height: 1.5;
+  font-family: neue-kabel, sans-serif;
+  
+  @include mediaXS {
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+}
+
+.sub-title{
+  font-size: 0.875rem;
+  font-family: noto-sans-cjk-jp, sans-serif;
+  margin-top: 16px;
+  margin-bottom: 40px;
+}
+
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  font-family: neue-kabel, sans-serif;
+  font-weight: 700;
+  @include mediaXS {
+    font-size: 1rem;
+  }
+}
+h4 {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  @include mediaXS {
+    font-size: 1rem;
+  }
+}
+
+b {
+  font-weight: 700;
+}
+p {
+  line-height: 1.5;
+  font-weight: 300;
+  font-size: 1rem;
+  @include mediaS {
+    font-size: .875rem;
+  }
+  @include mediaXS {
+    font-size: .875rem;
+  }
+}
+
+// span{
+//   @include mediaM2{
+//     font-size: .8rem;
+//   }
+//   @include mediaXS {
+//     font-size: .8rem;
+//   }
+// }
+
+a {
+  text-decoration: none;
+  color: $black;
+}
+
+button{
+  text-decoration: none;
+}
+
+img {
+  max-width:100%;
+}
+button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
+// pc-br{
+.pc-br{
+  display: block;
+  @include mediaS{
+    display: none;
+  }
+}
+.tab-br{
+  display: none;
+  @include mediaA{
+    display: block;
+  }
+}
+//spでbr
+.sp-br {
+  display: none;
+  @include mediaS {
+    display: block;
+  }
+}
+.m-br{
+  display: none;
+  @include mediaM{
+    display: block;
+  }
+}
+.xs-br{
+  display: none;
+  @include mediaXS{
+    display: block;
+  }
+}
+// show
+.media-m2-none{
+  display: block;
+  @include mediaM2{
+    display: none;
+  }
+}
+
+.pc-show{
+  display: block;
+  @include mediaS{
+    display: none;
+  }
+}
+
+.media-m2show{
+  display: none;
+  @include mediaM2{
+    display: block;
+  }
+}
+
+.tabL-show{
+  display: block;
+  @include mediaM{
+    display: none;
+  }
+}
+
+.tab-show{
+  display: none;
+  @include mediaM{
+    display: block !important;
+  }
+}
+
+.sp-show{
+  display: none;
+  @include mediaS{
+    display: block;
+  }
+}
+.sp-xs-none{
+  display: none;
+  @include mediaS{
+    display: block;
+  }
+  @include mediaXS{
+    display: none;
+  }
+}
+.sp-xs-show{
+  display: none;
+  @include mediaXS{
+    display: block;
+  }
+}
+ul {
+  list-style: none;
+}
+select {
+  appearance: revert;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+  th, td {
+    @include mediaXS {
+      font-size: .875rem;
+    }
+  }
+}
+ol {
+  padding-left: 20px;
+}
+ul {
+  list-style: none;
+}
+
+.back-inherit {
+  background-color: inherit!important;
+}
+
+
+
+.flex{
+  display: flex;
+  justify-content: space-between;
+  @include mediaS{
+    display: block;
+  }
+}
+
+.flex-warp{
+  flex-wrap: wrap;
+}
+.flex-as{
+  display: flex;
+}
+.flex-reverse{
+  flex-direction: row-reverse;
+}
+.justify{
+  &-between{
+    justify-content: space-between;
+  }
+  &-end{
+    justify-content: flex-end;
+    
+  }
+  &-around{
+    justify-content: space-around;
+  }
+  &-center{
+    justify-content: center;
+  }
+}
+.align{
+  &-center{
+    align-items: center;
+  }
+}
+.no-warp{
+  white-space: nowrap;
+}
+.pointer {
+  cursor: pointer;
+}
+
+/* bottom 三角 */
+.triangle{
+  &-bottom{
+    margin: 48px auto;
+    width: 0;
+    height: 0;
+    border-left: 250px solid transparent;
+    border-right: 250px solid transparent;
+    border-top: 64px solid $white;
+    @include mediaXS{
+      border-left: 150px solid transparent;
+      border-right: 150px solid transparent;
+      border-top: 50px solid $white;
+    }
+  }
+}
+.common-content{
+  img{
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.inline-d{
+  display: inline-block;
+}
