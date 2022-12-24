@@ -12,23 +12,45 @@
         position: relative;
         width: 100%;
         height: 768px;
+        @include mediaS{
+            height: 630px;
+        } 
+
+
         .fv-text{
-            margin-top: 20px;
+            margin-top: 32px;
             margin-left: 1.46%;
             z-index: 10;
+            
             h1{
             font-size: 10.625rem;
-                @include mediaM{
-
-                }
                 @include mediaM2{
-                    font-size: 8.5rem;
+                    font-size: 8rem;
+                    margin-top: 41px;
+                }
+                @include mediaS{
+                    font-size: 8rem;
+                    margin-top: 41px;
+                }
+                @include mediaXS{
+                    font-size: 4.5rem;
+                    margin-top: -5px;
                 }
             }
             .division{
                 position: absolute;
                 top: 147px;
                 letter-spacing: 0.053em;
+                @include mediaM2{
+                    top: 118px;
+                }
+                @include mediaS{
+                   top: 118px;   
+                }
+                @include mediaXS{
+                    top: 76px;   
+                 }
+
             }
         }
         .fv-img{
@@ -36,7 +58,10 @@
             position: absolute;
             margin-top: 195px;
             z-index: 5;
-            height: 587px;
+            height: 860px;
+            @include mediaXS{
+                margin-top: 90px;
+            }
             img{
                 width:100%;
                 object-fit: cover;
@@ -112,10 +137,17 @@
     .border1{
         border: 1px solid $gray;
         width: 103%;
-        margin-top: 175px;
+        margin-top: 460px;
         rotate: -13deg;
         z-index: 0;
         margin-left: -20px;
+        @include mediaS{
+            margin-top: 265px;
+        }
+        @include mediaXS{
+            margin-top: 135px;
+            width: 107%;
+        }
 
     }
     .border2{
@@ -128,6 +160,12 @@
         text-align: right;
         margin-right: 0;
         margin-left: auto;
+        @include mediaS{
+            top: -100px;
+        }
+        @include mediaXS{
+            width: 108%;
+        }
         
     }
 }
@@ -148,29 +186,58 @@
                 border: 4px solid $green ; 
                 position: absolute;
                 width: 92px; 
-                top: 96px;
-                left: 0px
+                top: 102px;
+                left: 0px;
+                @include mediaXS{
+                    top: 45px;
+                }
             }
     }
     .service-contents{
-        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 34px;
+    }
+
+    
+    // .service-contents{
+//         width: 100%;
         .service-item-1{
-            width: 22.460%;
             text-align: center;
             background-color: $pink;
             padding: 28px 24px 45px 24px;
             margin-top: 40px;
-            img{
-                margin: 23px auto;
+           
+            @include mediaS{
+                width: 100%;
+            }
+            .sp-flex{
+                @include mediaS{
+                    display: flex;
+                    align-items: center;
+                    margin: 0 auto;
+                    
+                }
+            .service-img{
+                @include mediaS{
+                    width: 30%
+                }
+                img{
+                    margin: 23px auto;
+                }
             }
             p{
                 text-align: left;
                 font-size: 0.875rem;
+                @include mediaS{
+                    width: 60%;
+                }
             }
+          }
         }
 
         .service-item-2{
-            width: 22.460%;
+            
             text-align: center;
             background-color: $blue;
             padding: 28px 24px 45px 24px;
@@ -185,7 +252,6 @@
         }
 
         .service-item-3{
-            width: 22.460%;
             text-align: center;
             background-color: $light-green;
             padding: 28px 24px 45px 24px;
@@ -200,7 +266,6 @@
         }
 
         .service-item-4{
-            width: 22.460%;
             text-align: center;
             background-color: $orange;
             padding: 28px 24px 45px 24px;
@@ -213,9 +278,45 @@
                 font-size: 0.875rem;
             }
         }
-    }
+        .service-button{
+            background-color:  $green;
+            width: 205px;
+            text-align: center;
+            background-color: $green;
+            margin: 60px 5% 60px auto;
+            a{
+                color: $white;
+                display: block;
+                font-size: 0.875rem;
+                text-align: left;
+                padding: 14px 5% 14px 5%;
+            }
+            span{
+                position: relative;
+                @include mediaM{
+                    text-align: center;
+                }
+
+            }
+            span:after{
+                content: "";
+                position: absolute;
+                top: 57%;
+                // left: 145%;
+                width: 40px;
+                 border: 1px solid $white;
+                // border-right: 1px solid $white;
+                margin-top: -5px;
+                left: 85px;
+                @include mediaM2{
+                    font-size: 0.875rem; 
+                }   
+            }
+
+        }
     
-}
+    }   
+
 
 .top-works{
     text-align: center;
@@ -237,7 +338,7 @@
             border: 4px solid $green ; 
             position: absolute;
             width: 92px; 
-            top: 96px;
+            top: 102px;
             left:0;
         }
     }
@@ -335,16 +436,20 @@
             }
         }
 
-        .achivemwnt{
+        .achivement{
             margin-top: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 29px;
             .achivement-item{
-                width: 27.44%;
                 color:  $gray;
-                text-align: left;
                 a{
                     color: $white;
                     font-size: 0.75rem;
                     text-decoration: underline;
+                   text-align: left;
+                    display: block;
+                    
                 }
                 .tag{
                     text-align: left;
@@ -352,6 +457,7 @@
                     align-items: center;
                     p{
                         font-size: 0.625rem;
+                        color: #919191;
                     }
                     img{
                     height: 11px; 
@@ -382,13 +488,14 @@
                 position: absolute;
                 top: 57%;
                 // left: 145%;
-                width: 12px;
-                height: 12px;
-                border-top: 1px solid $white;
-                border-right: 1px solid $white;
-                transform: rotate(45deg);
-                top: 36px;
-                right: 25px;
+                width: 80px;
+                border: 0.6px solid $white;
+                // height: 12px;
+                // border-top: 1px solid $white;
+                // border-right: 1px solid $white;
+                // transform: rotate(45deg);
+                top: 40px;
+                left: 200px;
                 @include mediaM2{
                     font-size: 0.875rem; 
                 }   
@@ -423,7 +530,7 @@
                     border: 4px solid $green ; 
                     position: absolute;
                     width: 92px; 
-                    top: 96px;
+                    top: 102px;
                     left: 0px
                 }
         }         
@@ -434,7 +541,7 @@
             width: 205px;
             text-align: center;
             background-color: $green;
-            margin: 60px 3.72% 60px auto;
+            margin: 60px 10% 60px auto;
             a{
                 color: $white;
                 display: block;
@@ -454,13 +561,11 @@
                 position: absolute;
                 top: 57%;
                 // left: 145%;
-                width: 7px;
-                height: 7px;
-                border-top: 1px solid $white;
-                border-right: 1px solid $white;
-                transform: rotate(45deg);
+                width: 40px;
+                 border: 1px solid $light-gray;
+                // border-right: 1px solid $white;
                 margin-top: -5px;
-                right: 20px;
+                left: 85px;
                 @include mediaM2{
                     font-size: 0.875rem; 
                 }   
@@ -499,7 +604,7 @@
             border: 4px solid $green ; 
             position: absolute;
             width: 92px; 
-            top: 96px;
+            top: 102px;
             right: 0;
         }
     }
@@ -519,14 +624,13 @@
 .top-news{
     margin-top: 220px;
     position: relative;
-    .left-img-wrapper{
-        width: 82.8%;
+    padding-left: 4.65%;
+    .news-wrapper{
+        width: 100%;
         text-align: left;
-        background-image: url("/assets/img/news-kv.png");
-        background-size: cover;
-        height: 499px;
+        
         .section-title{
-            padding-left: 4.65%;
+            
             position: relative;  
                 h2{
                     z-index: 10;
@@ -540,8 +644,8 @@
                     border: 4px solid $white; 
                     position: absolute;
                     width: 92px; 
-                    top: 96px;
-                    left: 4.65%;
+                    top: 102px;
+                    
                 }
         }
         .news-sub-title{
@@ -552,88 +656,112 @@
             padding-left: 4.65%;
         }
     }
-    .top-news-list{
-        width: 57.9%;
-        position: absolute;
-        right: 0px;
+    .news-list{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
         
-        ul{
-            margin-top: 72px;
-            li{
-                align-items: center;
+        .top-news-list-left{
+            position: absolute;
+            width: 45%; 
+            top: 120px;
+            ul{ 
+                .category-name{
+                    h3{
+                        text-align: center;
+                        color: white;
+                        padding: 16px; 
+                        background-color: $green;  
+                    }
+                }
+                margin-top: 72px;
                 background-color: $white;
                 color: $black;
-                display: flex;
-                padding: 22px;
                 margin-bottom: 5px;
-                .category-news{
-                    width: 60px;
-                    height: 22px;
-                    color: $white;
-                    background-color: $green;
-                    padding: 3.5px;
-                    font-size: 0.625rem;
-                    text-align: center;
+                padding: 0px 0px 30px 0px;
+                li{
+                    align-items: center;
+                    background-color: $white;
+                    color: $black;
+                    padding: 22px 10.2%;
                     
-                }
-                .category-column{
-                    width: 60px;
-                    height: 22px;
-                    color: $white;
-                    background-color: $light-gray;
-                    padding: 3.5px;
-                    font-size: 0.625rem;
-                    text-align: center;
-                    
-                }
-                .datetitle{
-                    margin-left: 24px;
-                    .date{
-                        font-size: 0.625rem;
-                    }
-                    .news-list-title{
-                        font-size: 0.875rem;
-                        font-weight: 700;
-                    }
-                }
+                    .datetitle{
+                        margin-left: 24px;
+                        .date{
+                            font-size: 0.625rem;
+                        }
+                        .news-list-title{
+                            font-size: 0.875rem;
+                            font-weight: 700;
+                            border-bottom: 1px solid $gray;
+                        }  
+                    } 
+                } 
+                li:after{
+                    content: "";
+                    position: absolute;
+                    right: 14%;
+                    width: 5px;
+                    height: 5px;
+                    border-top: 1px solid $black;
+                    border-right: 1px solid $black;
+                    transform: rotate(45deg);
+                    margin-top: -12px;  
+                } 
             }
+            
         }
-    .top-news-button{
-        width: 205px;
-            text-align: center;
-            background-color: $green;
-            margin: 60px 50% 60px auto;
-            a{
-                color: $white;
-                display: block;
-                font-size: 0.875rem;
-                text-align: left;
-                padding: 14px 5% 14px 5%;
-            }
-            span{
-                position: relative;
-                @include mediaM{
-                    text-align: center;
-                }
 
-            }
-            span:after{
-                content: "";
-                position: absolute;
-                top: 57%;
-                // left: 145%;
-                width: 7px;
-                height: 7px;
-                border-top: 1px solid $white;
-                border-right: 1px solid $white;
-                transform: rotate(45deg);
-                margin-top: -5px;
-                right: 20px;
-                @include mediaM2{
-                    font-size: 0.875rem; 
-                }   
+        .top-news-list-right{
+            position: absolute;
+            right: 0px;
+            width: 45%;
+            top: 120px;
+            ul{
+                .category-name{
+                    h3{
+                        text-align: center;
+                        color: white;
+                        padding: 16px; 
+                        background-color: $light-gray;  
+                    }
+                }
+                margin-top: 72px;
+                background-color: $white;
+                padding: 0px 0px 30px 0px;
+                li{
+                    align-items: center;
+                    background-color: $white;
+                    color: $black;
+                    padding: 22px 10.2%;
+                    
+                    .datetitle{
+                        margin-left: 24px;
+                        .date{
+                            font-size: 0.625rem;
+                        }
+                        .news-list-title{
+                            font-size: 0.875rem;
+                            font-weight: 700;
+                            border-bottom: 1px solid $gray;
+                        }
+                    }
+                }
+                li:after{
+                    content: "";
+                    position: absolute;
+                    right: 14%;
+                    width: 5px;
+                    height: 5px;
+                    border-top: 1px solid $black;
+                    border-right: 1px solid $black;
+                    transform: rotate(45deg);
+                    margin-top: -12px;  
+                } 
             }
         }
+
+
     }
 }
 
@@ -643,7 +771,7 @@
     height: 373px;
     background-image: url("/assets/img/contact-kv.png");
     background-size: cover;
-    margin: 200px auto 0px auto;
+    margin: 600px auto 0px auto;
     color: $black;
     .section-title-center{
         position: relative;
@@ -663,7 +791,7 @@
             border: 4px solid $green ; 
             position: absolute;
             width: 92px; 
-            top: 96px;
+            top: 102px;
             left:0;
         }
     }
@@ -677,12 +805,14 @@
     .contact-button{
         width: 218px;
         margin: 0 auto;
-        background-color: $green;
+        background-color: $white;
+        border: 2px solid $green;2
+        margin-top: 30px;
         a{
             display: block;
             padding: 14px 5% 14px 5%;
-            margin-top: 30px;
-            color: $white;
+            margin-top: 0px;
+            color: $black;
         }
     }
 }

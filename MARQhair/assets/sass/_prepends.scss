@@ -1,0 +1,46 @@
+$black: #3F3928;
+$pink:#F5E8DF;
+$white:#FFFFFF;
+$gray: #F6F6F5;
+
+
+$default: 'Noto Serif JP', serif,
+apple-system, blinkMacSystemFont, /* Macの欧文はSan Francisco (OS X 10.11以降) */
+'Helvetica Neue', /* Macの欧文 (OS X 10.10以前) */
+'Segoe UI',       /* Windowsの欧文 */
+YuGothicM,        /* Windows8.1以上は游ゴシック */
+YuGothic,         /* Macの游ゴシック */
+Meiryo,           /* 游ゴシックが入っていないWindows */
+'Alfa Slab One', cursive;
+
+@mixin mediaL($width-media: 1366px) {
+  @media screen and (max-width: $width-media) {
+    @content;
+  }
+}
+@mixin mediaM2($width-media: 1100px) {
+  @media screen and (max-width: $width-media) {
+    @content;
+  }
+}
+
+@mixin mediaM($width-media: 992px) {
+  @media screen and (max-width: $width-media) {
+    @content;
+  }
+}
+@mixin mediaS($width-media: 768px) {
+  @media screen and (max-width: $width-media) {
+    @content;
+  }
+}
+@mixin mediaXS($width-media: 576px) {
+  @media screen and (max-width: $width-media) {
+    @content;
+  }
+}
+@mixin mediaPHONE($width-media: 480px) {
+  @media screen and (max-width: $width-media) {
+    @content;
+  }
+}

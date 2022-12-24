@@ -56,16 +56,21 @@ body.fixed{
   width: 78.6%;
   margin-left: 0;
   margin-right: auto;
+      @include mediaS{
+        width: 100%;
+      }
 }
 .left-padding-wrapper{
   padding-left: 4.65%;
   margin-left: 0;
   margin-right: auto;
+      @include mediaS{
+        padding: 0  2.7%;
+      }
 }
 
 .right-wrapper{
   width: 21.4%;
- 
   height: 100vh;
 }
 
@@ -91,18 +96,19 @@ h2{
   font-size: 4.25rem;
   line-height: 1.5;
   font-family: neue-kabel, sans-serif;
-  
-  @include mediaXS {
-    font-size: 1.2rem;
-    line-height: 1.2;
+  @include mediaS{
+    font-size: 2.125rem;
   }
-}
+} 
 
 .sub-title{
   font-size: 0.875rem;
   font-family: noto-sans-cjk-jp, sans-serif;
   margin-top: 16px;
   margin-bottom: 40px;
+        @include mediaXS{
+          margin-bottom: 20px;
+        }
 }
 
 

@@ -1,0 +1,323 @@
+
+/*共通部分*/
+html {
+  font-size: 100%;
+  letter-spacing: 0.22em;
+  visibility: hidden;
+  opacity: 0;
+}
+
+// Webフォントの読み込みを終えたら表示
+html.wf-active{
+  visibility: visible;
+  opacity: 1;
+}
+body {
+  overflow-x: hidden;
+  font-family: $default;
+  line-height: 1.5;
+  color: $black;
+  font-weight: 400;
+  letter-spacing: 1.3px;
+  @include mediaS{
+    font-size: 0.875rem;
+  }
+  @include mediaXS{
+    font-size: 0.75rem;
+  }
+}
+body.fixed{
+  width: 100%;
+  position: fixed;
+  overflow: hidden;
+}
+
+.max-extend {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+.max-extend-inner {
+  max-width: 1366px;
+  margin: 0 auto 0;
+}
+.content-extend{
+  max-width: 1166px;
+  width: 85.3%;
+  margin: 0 auto;
+}
+
+//コンテンツに余白をつける。
+.wrapper {
+  padding: 0 4%;
+}
+h1 {
+  font-size: 2.5rem;
+  line-height: 1;
+  @include mediaM2{
+    font-size: 2rem;
+  }
+  @include mediaXS {
+    font-size: 1.8rem;
+  }
+}
+h2{
+  font-size: 1.5rem;
+  line-height: 1.2;
+  
+  @include mediaXS {
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+}
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  @include mediaXS {
+    font-size: 1rem;
+  }
+}
+h4 {
+  font-size: 1.12rem;
+  line-height: 1;
+  @include mediaXS {
+    font-size: 1rem;
+  }
+}
+
+b {
+  font-weight: 700;
+}
+p {
+  line-height: 1.5;
+  font-weight: 300;
+  font-size: 1rem;
+  @include mediaS {
+    font-size: .875rem;
+  }
+  @include mediaXS {
+    font-size: .875rem;
+  }
+}
+
+// span{
+//   @include mediaM2{
+//     font-size: .8rem;
+//   }
+//   @include mediaXS {
+//     font-size: .8rem;
+//   }
+// }
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width:100%;
+}
+button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
+// pc-br{
+.pc-br{
+  display: block;
+  @include mediaS{
+    display: none;
+  }
+}
+//spでbr
+.sp-br {
+  display: none;
+  @include mediaS {
+    display: block;
+  }
+}
+.m-br{
+  display: none;
+  @include mediaM{
+    display: block;
+  }
+}
+.xs-br{
+  display: none;
+  @include mediaXS{
+    display: block;
+  }
+}
+// show
+.pc-show{
+  display: block;
+  @include mediaS{
+    display: none;
+  }
+}
+.tabL-show{
+  display: block;
+  @include mediaM{
+    display: none;
+  }
+}
+
+.tab-show{
+  display: none;
+  @include mediaM{
+    display: block !important;
+  }
+}
+
+.sp-show{
+  display: none;
+  @include mediaS{
+    display: block;
+  }
+}
+.sp-xs-none{
+  display: none;
+  @include mediaS{
+    display: block;
+  }
+  @include mediaXS{
+    display: none;
+  }
+}
+.sp-xs-show{
+  display: none;
+  @include mediaXS{
+    display: block;
+  }
+}
+ul {
+  list-style: none;
+}
+select {
+  appearance: revert;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+  th, td {
+    @include mediaXS {
+      font-size: .875rem;
+    }
+  }
+}
+ol {
+  padding-left: 20px;
+}
+ul {
+  list-style: none;
+}
+
+.back-inherit {
+  background-color: inherit!important;
+}
+
+.text-align-center{
+  text-align: center;
+}
+.mr-top{
+  margin-top: 110px;
+  @include mediaS{
+    margin-top: 40px;
+  }
+}
+
+.responsive-br {
+  display: block;
+  @include mediaXS {
+    display: none;
+  }
+}
+
+.flex{
+  display: flex;
+  
+  @include mediaS{
+    display: block;
+  }
+}
+.flex_2{
+  display: flex;
+  flex: 1;
+  @include mediaM2{
+    display: block;
+  }
+  @include mediaS{
+    display: block;
+  }
+}
+.flex-warp{
+  flex-wrap: wrap;
+}
+.flex-as{
+  display: flex;
+}
+.flex-reverse{
+  flex-direction: row-reverse;
+}
+.justify{
+  &-between{
+    justify-content: space-between;
+  }
+  &-end{
+    justify-content: flex-end;
+    
+  }
+  &-around{
+    justify-content: space-around;
+  }
+  &-center{
+    justify-content: center;
+  }
+}
+.align{
+  &-center{
+    align-items: center;
+  }
+}
+.no-warp{
+  white-space: nowrap;
+}
+.pointer {
+  cursor: pointer;
+}
+/* フォントカラー */
+.section-content{
+  margin-top: 40px;
+  margin-bottom: 80px;
+  @include mediaS{
+    margin-top: 32px;
+    margin-bottom: 56px;
+  }
+}
+/* bottom 三角 */
+.triangle{
+  &-bottom{
+    margin: 48px auto;
+    width: 0;
+    height: 0;
+    border-left: 250px solid transparent;
+    border-right: 250px solid transparent;
+    border-top: 64px solid $white;
+    @include mediaXS{
+      border-left: 150px solid transparent;
+      border-right: 150px solid transparent;
+      border-top: 50px solid $white;
+    }
+  }
+}
+.common-content{
+  img{
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.inline-d{
+  display: inline-block;
+}
