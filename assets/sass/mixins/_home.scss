@@ -119,8 +119,18 @@
                                 margin-left: auto;
                                 margin-top: 1.605px;
                                 border-bottom: 1px solid $gray;
-                                
+                                  
                             }
+                            a:hover::after{
+                                content:"";
+                                display: block;
+                                margin-right: 0px;
+                                margin-left: auto;
+                                margin-top: 1.605px;
+                                border-bottom: 1px solid $gray;
+                                width: 80px;
+                            }
+                            
                             
                         }
                     }
